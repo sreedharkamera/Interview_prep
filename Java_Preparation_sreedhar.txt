@@ -1,0 +1,1595 @@
+Best Sites to learn java
+https://www.w3schools.com/java/java_encapsulation.asp
+https://www.tutorialspoint.com/java/java_encapsulation.htm
+https://www.softwaretestinghelp.com/java-coding-interview-programs/
+--apple
+core java parts
+Rest api
+j2ee-->jsp frontgood to know servlet
+sorting
+handling coding(core java)
+--------
+------------------------------------------------------------------------------------------------------------------------------------------------------------	
+1.Data Encapsulation :-Data hidning,getters/setters method
+
+wrapping data and code as a single unit.variables in class declared as private and will be hidden from outside class ,use:we can hide the data.
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+2.Abstraction :
+  1.hiding implementation from user just providing fucntionality ti the user.
+  2.abstract means not fully defined
+  3.whenever we unaalbe provide defination for a method it is called as abstract method ,abstrct method does not have defination or body
+  4.we can create object for abstract class or we cant instantiate the abstract
+  5.abstract class to be extended by general class
+  6.extended class(inherited class) has to define all abstract methods
+  7.To achieve security - hide certain details and only show the important details of an object.
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+3.Inheritence --extends--update /elobaration
+  1.accessing exisitng features,adding new fucntionality,updating existing fucntionality
+  2.One class acuires proerties of another class  with the help of extends keyword
+  3.the alss which inherits properties is called sub class /child class/derived clas
+  4.the class which is inherited properties is called super class/parent class
+  5.Super keyword();It used to differitiate parent and child members
+  6.Super keyword used to invoke parent/super class constructor
+ public void run()
+ {
+	 super.run();  --this super keyword calls run method of parent or super class
+	 
+  System.out.println("Bike runs with speed:"+speed);
+   System.out.println("Bike limit:"+milage);
+ 
+ }
+  7.There are 3 types of inheritence a.single b.multi level c.hierrichal d.multple (this is does not support by java) hence,we use 
+  class implemts more than one interface
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+4.polymorphism:Parent reference used to child object
+many forms,one class extends and implemtns multiple interfaces
+	re using attributes and methods of class when we create new class
+	public interface Vegetarian{}
+	public class Animal{}
+	public class Deer extends Animal implements Vegetarian{}
+	Now, the Deer class is considered to be polymorphic since this has multiple inheritance.
+    overloading and overriding are the examples for ploymorphism
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+5.Overriding:1.If a class inherits a method of super class ,then we can override the method if it is not marked as final
+             2.we can overfide the functioanlity of super class in sub class
+             3. we can use super class reference to point objects of sub class
+             4.rules :argument list ,return type,access type should be same as super class
+             5.if mehtod declared as final,static cant be overriden
+             6.if the method cant inherited it cant be overridedn
+             7.construtor cant be overrideden
+             8.with the help of super we can invoke super class method
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+6.overloading
+           same method with different parameter list in a class or different return type
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+7.Interface:complete abstarct class,it only has method definations not body (not implementation)
+  	to access interface methods a class has to be implemneted that interface with the hlep of implements keyword
+ 	3.objects cant be careted
+	4.we must override all the mehtods	
+	5.interface attributes defualt public, static, final
+	6.it cant contain constrtutor
+   it achive security and multiple inheritence we use interaces
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+7.Collection:is method to store and manipulate(opeations) on group of objects  or single unit of objects
+	2.interfaces are 
+             Set ,List ,Queue
+         3.Classes are
+             Array list,linked list,vector,priority queue,hash set,linked hashset,treeset.
+      framerowk:is architure to resetn set of classes and interfaces
+
+      collection :--list,queue,set
+      list:	array list,liked list,vector
+      queue:   priority queue
+     Set: hash set ,tree set,linked hash set
+
+    methods:public boolean add(E e).
+     public boolean addAll(Collection<? extends E> c)
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+8.Collection Interface:It has all methods which will be implemented by all the sub classes  lile boolean boolean delete 
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+9.List interface :it is child interfae of collection interface 
+	it stores collections of objects   and it can be implemtned by arraylist ,linked list ,vector,stack
+	it has duplicates values
+	it instatiate 
+	list<int> list1=new ArrayList()
+	list<int> list1=new LinkedList()
+	list<int> list1=new vector()
+	list<int> list1=new Stack()
+ 	there are many mehtods to insert,delete access all elements of the list
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+10.Array list
+	dynamic array ,util library,
+	1.It maintains insertion order and it is non-synchoronized
+	2.It uses dynamic array to store the duplicate elements 
+	3.Reading is faster but insertion and deletion are slower
+	4.it maintains
+	    program:
+		Arraylist<string> list1=new ArrayList<String>();//Creting array list
+		list1.add("Ravi"); list1.add("Sreedhar");	
+		Iterator itr=list.Iterator();
+		while(itr.hasNext())
+ extra:stores elems dynamically,add method 4 insertion
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+11.Linked list :implements collection interace
+	2.uses doubly linked list to store the elements.like array list it also stores dupicates elemetns
+	3.like array list it maintains insertion order and it is not synxhonized
+	4.insertion easy,deletion is easy unlike array list
+	program 
+ 	Linkedlist<string> al=new Linkedlist<string>();
+	al.add("Ravi");  
+	iterator<String> al=al.iterator();
+	while(itr.hasNext()) {s.o.p()}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+***11.Difference bw array list and linked list :bothe implements list interface
+	1.Array list 	:elemets [0][1][2][3][4] --we cna access using index so it is so much faster comared to linkled list
+       linked list :elemetnts stored in node 
+        linlkied list---> [10 |5046(next node address)]---5046[20|2346]---2346[30|null]
+      2.array list occupy less more it only stores values 
+        linked list stores hascode filed,data filed,address to next field  
+	so accessing of linked list very difficult and occupuy lot of memeory 
+	butttt insertion and deletion are faster in linked list comapred to array list ,in array list we need to shift all the elements to right side
+	 [0][1][2][3][4]--need to shift 3--4,2-->3,0--->1
+	[10 |1234]--->1234[22|5046]----5046[20|2346]---2346[30|null]
+	if my app is has only processign go for arraylist ,less memory and processing is fast 
+	if we have more insertion and deletion are there go for linked list
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+12.Vector is similar to array list but it is synchonized
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+13.Queue interafce :this interface fifo order priroty queue,dequeu,arraydequeue	
+------------------------------------------------------------------------------------------------------------------------------------------------------------   
+14.Set interface
+ 	1.unorderd collection of elements does not have dupicates values
+	2.it holds null values	
+	3.set<string> s1=new hashset<string>();
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+15.Hash set  :i cant allow duplicate but rder i cant guranty  ,iterator used to traverse and display elements
+	1.hash set stores elemets by hashing	
+	2.it allows unique elemets  and null values
+	*3.It is not synchonized
+	4.Hash set does nto maintain insertion order .elemets inserted based ont heir hashcode
+	5.useful for search opearations
+	6.metods  boolean add()	,void clear(),boolean isempty(),boolean isempty(),
+	program hashset<String> set=new Hashset();  set.add("one"); set.add("one") if we add duplicate values it displayes only one once
+	Iterator<String> i=set.iterator();
+	https://www.javatpoint.com/java-hashset
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+17.Linkedhashset
+	1.it it is subclass of hashset calss and implemtes set interface
+	2.Linkedhashset<String> set=new linkedhashset();
+	3.unqiue elements only and contains null vaue
+	4.it is not synchonized
+	5.it maintains insertion order	
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+18.Treeset 
+	1.it implments set interface
+	2.contians unique elements and does not allow null values
+	3.treeset access and retrival are faster
+	4.it is not synchonised
+	5.it maintains aseding order.
+	we can do asceding and various useful operations
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+****19  .difference
+	hash set                                 linked hashset 	    				treeset
+      1.doesnot maintain insertion order      1.Mianitains insertion order                          1.It implements sorted set ,maintains asceding order
+      if u enter a,b,c it may print b,c,a      but in linked list it maintain insertion order       
+ these 3 does not allow dulicates values
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+***20. difference list and set:list can gold dupilcate elemts set does not have dupplicate elemetns
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+21.Map interface:
+	map is Key and value pair,key,value pair is entry ,
+	map doesnt allow duplicate keys ,it might have duplicate values,
+	hashmap and linkedhashmap allow null values but treemap doesnot allow null value or key value
+       program:Map<Integer,String> map=new Hashmap<Integer,String>();
+	map.put(100,"Sreedhar");
+	map.put(200,"munna");
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+22.Hashmap:
+		MAP key value pair
+	Hashmap contians values based on key 
+	hashmap  has null key values and multiple null values but it does not hold dupplicates values(unique vlues only)	
+	**hashmap is not synchonised and does not maintain the insertion order
+	  HashMap<Integer,String> map=new HashMap<Integer,String>();          
+      map.put(100,"Amit"); 
+    uses hashing tehcnique,it stores data key ad value pair,
+	it uses array and linked list strcture internally for storing key and value pair.	
+	equal() compares two keys whetehr equal or not
+	hascode() :it is memory reference of the object .value received from the method used as bucket number.bucket number is address of element inside map.
+	backuet();array of nodes called as bucket
+    to know index =hascode(key)&(n-1)
+	get() method in HashMap
+	get() method is used to get the value by its Key.
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 23.LinkedHashMap;it is sub class of hashmap 
+	lhm contian values based on key
+	lhm can hv one null key and multiple null values but it does not hold duplicates values
+	ihm is not sunchonised buttt it maintain inseriton order
+difference BW hashmap and lnikedhasmap :linked maintain the insertion order wher as hashmap doesnt maint inertion order
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+24.TreeMap class: it stores vallues in sorted order of keys    
+	ex:sachin -key1 ,value -sachin 1000,dravid-key2 ,value dravid 14000  
+	sorted order:[ dravid ,dravid 14000   ]
+			sachin ,sachin 1000]   here it soredted based on key  as d comes first  
+	 
+	it implemnets sortedmap 
+	treemap contians values ased on key.
+	treemap can have one key value and multiple null values but it does not hold suplicates values.
+	it is also not synchonised like hashmap and linedhasmap 
+	*it maintian sorted irder .it maintain asceidng order
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+25.hastable
+here in linked list travesing is difficult it doesnto contain index and we need to travers one location to another location to aovid this hastable comes 	 	
+	hastable is array of list,each list is bucket
+	position of bucket identifed by hascode()	
+	hash table contians value bases on key	
+	hastbale does not hold null keys  and null values 
+	it holds unique values	
+	**hash table in synchonized
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+25.a:diff BW linkelist and hastable
+in linked list traversing is difficult we need traver one by one value to find the element so travrsing difficult
+in case of hastable with the help of elemtent mod% size we can find element location very easily hence hashtable introuduced			
+------------------------------------------------------------------------------------------------------------------------------------------------------------	
+26.Concurrenthaspmap
+	as hashmap is not synchonized ot thread safe we can use concurrent hashmap also this is the replcement of hashtable as well
+	concurrent hashmap is synchonized   (used in concurrent multithresed environments)	
+	has betterperformence than hastable
+	also allow multireaders to use read concurrently without any blocking
+	The concurrent update is achieved by internally dividing Map into the small portion which is defined by concurrency level.
+
+	the concurrent update is achieved by internally dividing Map into the small portion which is defined by concurrency level.
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+27.Diff hashmap,               			linkedhashmap,                                treemap
+	doesnot maintain insertion order    it maintian insertion order aong wiht keys     asceidng order of elemts
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+********28.diff  hashmap                        hastable
+
+Synchonized    not 		                 synchonized
+null           one null key and null values         no null values
+performence   fasterthan hash table since not sync
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+****27 a.How hashmap works internally
+  1.map<string,Interger> map=new Hashmap<string,Integer>();
+  2.Because of this statement array of buckets are created  ,16 number of bucket created
+  |0| --buket ,each bucket is node
+  |1|
+  |2|
+  |3|--
+  |4| -->[hashcode][key][value][next]--linked list created	here node or linked list going to store 1.key 2.value 3.hascode 4.next address
+  |5|
+  |6| -->[222111][aaa][1][3234]-->(here both keys got same hashcode so same index)-->[222111][aab][2][null]
+  3.key and value is put in map
+  4.calucalte hashcode hascode of key	:is find to store the key in specific index
+   hashdoce helps to find the index to store key  --
+  5.index =hash & (n-1) ==index generated ex:4 index
+     Put===>hascode===>index==>linkedlist
+  6.if key is NUll it goes to 0 bucket
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+28.Excpetions:runtime error/events distrubut flow of execution,
+	2.checked or unchked shud occur at run time only there no chance to exception to  occur at compile time
+
+	3.exc:xceptions checkced by compailer --chked xpection ,writing file into file ,we check 
+
+	4.checked excepption:by complier for smooth xecution of progrma at runtime called checked exception  ex:filenotfound ,sql excpetion ,hallticekt missing
+	herre compliler chek wherther we are handilign else it thorws compile time error with the help of try catch or throws
+
+	5.uncheck expceiton:not cheked by complier called unchecked exetion	,com;iler wont check whether progrmaer handle or not 
+	ex:null pointer,arthimetic
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+29.error caused by lack of syste resources not our program
+like 	,stack overflow error,verify error,linkage error,vm error--serier admin is responsible  ===>uncheked 
+runtime excpetions and its child classes,error and its child classes  are unchked expcetions other than all are checked expctions
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+30.serialization:object--->binary(bites)--storing file	
+1.converting object state to persistence state(perminent state) for storing phytsical medium
+accout  :(acct number:1000,balence:8000 ) balnce value chane withdraw =5000 
+  serilazaiton
+()----------------->[binary format](filename.ser)     writeobect and readobject
+  object stream
+
+2.ObjectOutputstream(acc)--write object into file 
+3.here account implemtns serializable(interface) then only we can converting persistnece state  ,persistence binary format
+4.if i dont want a atributt to serialize i use trasient keyword   ex:transient empnumber:
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+31.how serilizaiton works in inheritence
+if if parent implments serilizable and if child does not implments ,in this case as per inheritence sub class automaitcally implments serilizable
+	but if sub class implmens seriliable then we need to serilizie the super class attributes in this 
+  **we need to override the methods writeObject and ReadObject as a private access modififers
+if we dont serilize super class objects JVm assiges defualt values those values
+and JVM cheks for default no argument construtor
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+32.obj:real world entityt ,class --coll of objects,obj are acreated instances and varialbes
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+33.Instance variable :declared outside method and inside class called instance variables
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+34.Static variables :(static varialbe per class)  static:free access non-static :restricted acces
+1.directly access --if out program single class
+2.class name:multiple classes,if we want to access satic memebrs ,we need to access with the help of class name2
+ststic 
+{
+} --excuted by defualt withput explicit call if there is any reference
+always static executed and then other blocks 
+if that calss contians static varialbes and methods those wil be excecuted just by referring
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+35.why we shd declare static varible 
+if we declare variable static nothing it is called global varialbe
+we can object every where in other class 
+if we defien object reference varialbe globally (static test x=null)  we can access everyhwere in athe application 
+class test {
+	statc test x=null; --it is declared globally ,we can access eveyr wher i appilication
+	static
+	{
+		Test.x=new Tes();
+		s.o.p(Test.x);
+	}
+	main()	
+	{	
+	s.o.p(Test.x);
+	}
+	}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+36.thread :Thread a single flow of contorl with in program or independent path of execution in the program
+Number of tasks performed together
+group of thread combined called as program
+thread created new state
+ 1.new(newly crated state)--->2.runnalbe(ready to run)--->(if it is allocated to processs)-->3.running-->(if any interutption)==4.waiting/blocked state 5.stop
+                                                                                                        From here it may got to runnable or running satge	
+1)new 2)ready to execute(runnalbe)  3)running 4)stop stage 5)io interuppton
+ 1.thread t=new thread(); after this thread state will be new
+2.t.start():--always process start from statrt method();  now statte of runnalbe state
+3.now automatically t.run() mehtod exeucted ;;;now state thread is in running state
+4.t.sleep() and t.wait() it moves too  waiting state or blocked state
+5 t.stop() excuted afeter completion start and 	thread stat thread
+start(),run()--running,	sleep();;--thread slppe milli seconds,join():waits for anohter thread to complete getid();thread id
+getname():to get name thread-0  ,mini_prority-1,norm-priroty=5,max_priroty-10
+by defuault --5 ,we cna change priroty ===set_prioroty()
+sleep() and join() --static methods--shd writeen in try and catch block
+every clsaa derived from thread
+class single extends thread
+{
+public void run()
+{ for(i=0;i<5;i++)
+	{ s.o.p(); } } }
+class ST
+{
+psvm()
+{
+  single st=new therad();
+t.start();  after this method run method automatically executed
+}
+-----using interface
+class single implements runnable
+{
+publci void run()
+{
+for() s.op()}
+}
+class STR
+{  psvm()
+    {
+       SIngle s=new single();
+     Thread t=new Thread(s);
+     s.start();
+	
+to create Thread class and implements runnable interface
+we need to override run method
+public void run()
+{
+thread logic
+}
+---
+interfacec runnalbe
+{
+void run()<----   implemtnets thread class
+
+}
+
+class thread 
+public void run()
+{
+empty
+}
+sleep()
+{
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+37.sleep() and join()
+join--main thread shd wait untul child thread completes its execution	
+whenever one htread deends on another time completion use join mehtod
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+38.SYnchonization :process allowing one thread 	at a time complete task entirely
+class counter
+{
+   int counter;
+public synchonized void increment()
+  { counter++; } }
+public class syncdemo
+{psvm 
+  {
+     counter c=new counter();
+       Thread t1=new thread(new Runnable()
+			{
+				public void run()
+				{
+                                  for(i=0;i<=1000;i++)  
+                                      { 
+						c.increment(); }}}     ---here both thread t1 ,t2 accessign fun increment ,counter gives inconsisten value
+                                                                          so to avoid this we use synchronized keyword ,so only one thread can access at a time
+       Thread t2=new thread(new Runnable()
+			{
+				public void run()
+				{
+                                  for(i=0;i<=1000;i++)  
+                                      { 
+						c.increment(); }}}
+
+
+Deadlock:if two thread are waiting for each other foreever is that situation called deadlock
+thread1 holding obj1 and waiting for obj2
+thread2 holding obj2 and waiting for obj1
+reason :using synchonized keyword,remove synchonix=zed from any of the class if two has synchinirzed keyword 
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+39.Immutable class:once object created to a class that  state cant be changed
+	class test {    ---------->instatited (x=100 )  afer sate modified
+ 
+                   }
+
+   rules to  follow to create immuta claass
+     1:class is public and final
+     2:properties are private and final  --once value assigned to final variable we cant chamge the value 
+     rule 3:intialise all properties thorugh contrutor
+     rule 4:setters are NOT allowed only getters are allowed
+  in simple object value cant be changed and varialbes are final and private and values set thorugh object creation (thorugh construtor )
+  only getters aere allowed just to read not update(setters not allowed)
+	
+   final public class immutable
+   {
+    private final int a;
+    public immutable(int a)
+		{ this.a=a; }
+	public int getA()
+        { return this.a; }
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+40:wrapper classe:sometimes we need to work with numbers but not using primitiva=tive datatyes(int,char,float) using objects	
+primitivivat date tyoe --object --boxingautomatically done compiler--auto boxing
+object --primitive --unboxing --automatically done---auto unbxing
+all 8 dattypes comes with classes associate with them
+wrapper classes--wrap primitive datatype and gives object of it
+int x=25;
+Integer x=new Integer(25);
+int,	float,double,char--primitivate datatypes
+Int,    Float,Double,Char--Classes
+assging value of int to Integer class called boxing
+	Integer ii= new Integer(i);
+wrapper cls used collection framrework
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+41:String pool is pool of string stored in java heap memory
+
+                      java heap
+               ---------------------------------
+s1=cat         [      [ "cat"] ---s1(reference)]  Sring s1= "cat"  String s2="cat" here cat is already present in the pool so s2 points string obj in stringpool
+s2="cat"       [             ----s2            ]
+s3="dog"       [      ["dog"]-----s3           ] dog is not present stirng pool,jvm new string obj and returns reference s3 Stirn s3="dog"    
+               [       -string pool-           ]             ]
+               [ ("cat")---->s4                  ]
+               ----------------------------------
+Stirng s4=new Sring("cat")
+                   
+s1==s2 // true s1 and s2 points string pool
+s1==s3 // false
+s1==s4	//falese     eventhogh value same but s1 points to string object string pool but s4 points string object java heap   
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+42.String manipulaiton 
+String is class,to access we need to creatre object	,java.lang.* 
+1.string is ummutable ,v hv to create new string  
+2.memory watafge:every time user modifies string new reerence created (more memory locations created heap memro)--toover this stringbuffer intorduced
+3.length():leght of the string
+4.INDEX OF:returns index of givne string
+5.CHAR AT:str.chatat(index)
+6.replace replace old string to new string
+7.tolowercase--str.tolowercase
+8.compareto:compareTo(str) :unicode  Hello==hello ,unicode(H)=
+9.trim() --spaces removed
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+43.Strignbuffer()
+memory watafge:every time user modifies string new reerence created (more memory locations created heap memro)--toover this stringbuffer intorduced
+difference
+in string str.concat we need to assign to new srtring then only cancat hapends
+in stringbuffer we can direct append str.append("hello");
+1.append(string)---str.append("java");
+2.insert(index,string)--str.insert(2,"hi")----we hi lcome
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+44.jdk--java devleopemtn kit
+jdk progivdes environment to develop and run java applications(DEV+RUN)on devloper mahcine install jdk
+JRE--just to run the java applications Java runtie environment is responsible(RUN)  in client machine need to install JRE
+JVM--in JRE JVM is resposability to run the java program to read each line and execute program
+it is interpretor ,JVM is and interpretor
+jdk --to ---env--dev+run   (JDK=JRE+Dev tools)
+jre --env--run--java--progrma (JVM+Library calsses)
+jvm--to read line line and excuted
+------------------------------------------------------------------------------------------------------------------------------------------------------------s
+45.class loaders
+is very first cals loaded by static main method()
+		bootstrap loader (core class loader)   jre/lib/*.jar
+		extention class loader              ext/*.jar
+		syste class loader          classpath jdbc.jar.hibernate.jar
+		
+  custom calsslaoder1             customr calss loader
+   class.forname("com.mysql.jdbc.driver");
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+46.comparable                            and compator
+    default natural sorting order       cutomized sorting 
+class has to implements comparable interface to have defualt sorting order
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+47.Servlet :serverside technolgy ,it is controller/class which helps client to give the resposne
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+48.jsp:java server pages it is extention to servlet helps to create web pages
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+49.CURD--create and update and read and delete
+**TO CRUD FROM JAVA*STATTEMENTS*PREPARED STATEMENTS*CALLABLE STATEMENTS*
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+50.statetment interfaces
+  statement obj base itnerafece   createstatement() method   a.executeupdate(string dml)--nuo of rows returns updated 2 rows
+    b.exeuctequery--execute query ,it takes dql statemnt,result set --object represnettation of daatabase table
+   here limitaion --sql stmt ,database 2 things --copilation and preparation of execution plan query  --performence every time
+   if we send query 10 times database compiles it for 10 times unnecssarylity
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+51.preprared statement(String str):pre compies it ,first time query executed ,
+   mehtods we can only replcae valeus  --i=gives setters methods to bind parameters
+	it used  comipl version of quer
+   exeucteupdate and executeuery
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+52.callable statemtn:it child of preparedstament
+  allows exce stoed procedure in db from java program
+   preprecall(string call) (in out ?)
+we register output 
+oly method --execute() to execute procedures
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+53.How many ways to create objects in java
+ans: a.Using new keyword best way construcntor called
+     b.clone method 
+     c.class.forname()
+    d.deserilizaiton() method --no construoctor called
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+54.Constructor means 
+	uses to intializing object
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+55.ci/cd ---->jenkins (code checkin build---build genearates)
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+56.Garbage collection:method by which java performs automatic memory management
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+57.Difference Between Function and method
+A function is a piece of code that is called by name. It can be passed data to operate on (i.e. the parameters) and can optionally return data (the return value). All data that is passed to a function is explicitly passed.
+
+A method is a piece of code that is called by a name that is associated with an object. In most respects it is identical to a function except for two key differences:
+=======================Apple===============
+58.Final before class,function,variaable
+variable:Stop value change ,constant
+Mehtod:Stop method overriding	
+Class:cant extend(immutable)
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+59)Checked vs unchecked expections
+chked-compile exception (IO exception) (intimates us to handle or force us to handle) ex:error shown at javac program.java 
+uncked---run time exceptions(array ,arthimatic)   ex:error shown at java program
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+60)A public static final variable is a compile time constant, but a public final is just a final variable, 
+i.e. you cannot reassign value to it but it's not a compile-time constant.
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+61)Rules to override method
+ 1)Method name and parameter list should be same 
+ 2) return type shd be same or subtype   (ex:"food" return type in super class in sub class it shd be food or "dogfood")
+ 3) the overriding method may have less restrictive (more relaxed) access modifier.
+   ex:If the overridden method is has default access, then the overriding one must be default, protected or public.
+If the overridden method is protected, then the overriding one must be protected or public.
+If the overridden method is public, then the overriding one must be only public.
+ 3) private methods and static methods cant be overdien 
+-------------------------------------------------------------------------------------------------------------------------------------------
+62)Finally keyword :to close the resource
+-------------------------------------------------------------------------------------------------------------------------------------------
+***63)Generics:to provide type safty and and to resolve type casting problem
+1.To provide type safety and resolving type casting problem
+2.Generics--along with collection to declate collection,without anytype we can declare
+
+Type safty:
+to type safty array already used ,bcz if i declare String s[]=new String[2];  s[0]="ravi" ,s[1]="munna",s[2]=10--incompatable type
+here array gurenty for type safty ,it will allow only string values 
+
+in collec obj not typesafe by default ,if we wanna add nly string objects to array list ,by mistake if we trying to insert anyother element we dont nay compile type 
+error
+arraylist a1=new arraylist();
+l.add("raju");
+l.add(new Integer(10)); no compile time error
+
+so to provide type safty in colleciton and to have dynamic array(size shd nt be fixed)  we go for generics in collection
+
+Type casting:
+to retrive in array there is no need of type casting but in the colleciton we need to type casting the value 
+Arrayist l1=new Arraylist
+String name1=l.get(0); Comiplation error
+String name1=(String)l.get(0);  
+
+To resolve this problem SUN people introduced typesafty,type casting in 1.5
+to creare arraylist object to hold any String objects we have to define as follows
+ArrayList<String> l=new ArrayList<String>();	
+we cna gurenty type safty;--we cant add l.add(new Integer(10));  l.add("Shiva");
+at the time of retrival no need of tyepe casting Stirng name=l.get(0);--type casting no need
+
+error
+ArrayList<int> l=new ArrayList<int>(); --Error
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+64)
+
+list l1=new Arraylist;
+list l2=new Arraylist(?);s
+list l3=new Arraylist<String>;
+-------------------------------------------------------------------------------------------------------------------------------------------
+65)how may ways v can create threads:
+1)Thread = New thread
+2)Runnable interface
+-------------------------------------------------------------------------------------------------------------------------------------------
+66)Transient and Volatile ans synchonized Modifiers:
+Number of tasks performed together is threadidng
+synchonized :used allow one mehtod acceessed one time  ex:public sybchonized void showdetails(){}
+Transient:to exclude from seriazation use for any instance varialbe
+volatile :Threadsafe
+every read and write of volatile keyword into the main memeory not in the cpu cache
+threadlocal
+----------------------------------------------------------------------------------------------------------------------------------------------
+67.copy why copy  :shallow copy and deep copy 
+
+if we want to copy a object including its value we use copy
+best way to copy is cloing
+class a	{ int i;int j;} 
+ A obj=new A(); 
+obj.i=5; obj.j=6;  
+A.obj1=obj.clone();
+-----------------------------------------------------------------------------
+68.****5.concurrent modification exception:--->(2 threads on single colleciton type)
+iteraors to itertot ,1)for loop 2)by iterator loop
+itr.hashnext() whie iterarting /modifications----will get concurrent modifications method-only on list
+fail fast iterator.
+
+1.child class of runtime exception  which means unchecked exception 
+2.we dnt need to takecare at compile time
+3.any collection modified by multiple threads concurrent modificaiton excetion happends  (2 threads on single colleciton type)
+
+solu:lessthan 1.5 java
+     synchronizedList
+    higher java  --concurrent package
+---------------------------------------------------------------------------------------------------------------------------------------
+69.
+--exceutor framework:threds******
+
+Tradition thread creation has problem 1)time consuming(every time need to create therad) 2)poor resource management 
+3)not robust(system crashes because of multiple theread cration)
+
+executoe framework fgves thread pool:allows us to crate pool of wrking threads  
+therse thread goes back too pool after the job done instead of dying and reaming in 
+executor e=executors newcachedThreadpool();
+runnalbe task=new checkprocessro();
+e.exeucte(task);
+
+threadlife cycle managed by execuotr framewowrk
+we cn set upper limit for threads
+----------------------------------------------------------------------------------------------------------------------------------------
+*****70.Callable interface:equal to runnable  ,it can callable return something
+semaphore
+sentence
+why do we use  callable
+-----------------------------------------------
+71.REST:representational state transfer
+CRUD  :to use http picnicpal to provide create,read up,dele operation data
+end point
+http mehtods
+1)get getting data
+2)post creating data
+3)put for udapting dat
+4)delete deleting data
+Resftful:---Jersey---data undhi,url---to client (auth,authorisation)
+exchanges data bw diff applicatioins
+json/xml
+
+cleint and server comm hepns with http protocal	
+server(bunch of services accessed by http protocal)
+-------------------------------------------------------------------------------------
+72.
+wrappal classes:Inetger ,sring
+charecter wrapper class
+to wrap a primitive dataetypes
+--------------------------------------------------------------------------------------------------------
+73.
+i go to school
+i caome every 
+unque words---which word used
+---------------------------------------------------------------------------------------------------
+74.how to reverse string for (int i=0:i>0;i--)
+---------------------------------------------------------------------------------------------------
+75.difference between post and put 
+post and put and req
+post is create data
+put is to update
+---------------------------------------------------------------------------------------------------------------------------
+76.sorting alogorithms
+
+merge sort,insertion sort,quick sort,
+merge sort:
+Divide and conquer
+1)find mid element by low+high/2
+2)divide low to mid and mid to high
+3)until the list(last)
+4)compare one list with second list and swap if the elemetn
+  if it big place to left side
+   if it is small place to right side
+5)swap untul one group formed
+MergeSort(arr[], l,  r)
+If r > l
+     1. Find the middle point to divide the array into two halves:  
+             middle m = (l+r)/2
+     2. Call mergeSort for first half:   
+             Call mergeSort(arr, l, m)
+     3. Call mergeSort for second half:
+             Call mergeSort(arr, m+1, r)
+     4. Merge the two halves sorted in step 2 and 3:
+             Call merge(arr, l, m, r)
+
+complexity in all cases
+Time complexity of Merge Sort is \Theta(nLogn) in all 3 cases (worst, average and best)
+104
+Divide and conquer
+1)find mid element by low+high/2
+2)divide low to mid and mid to high
+3)until the list(last)
+4)compare one list with second list and swap if the elemetn
+  if it big place to left side
+   if it is small place to right side
+5)swap untul one group formed
+class Test
+{
+	int[] merge_sort(int[] arr,int s,int e)
+	{
+		if(arr.length==1)
+		
+			return arr;	
+			
+		
+		else
+		{
+		int m=(s+e)/2; //middle index  ,s--m,m+1--e
+		int a[]=merge_sort(arr,s,m); //first half 
+		int b[]=merge_sort(arr,m+1,e);  //second half
+		
+		int c[]=merge(a,b);  //pass both halfs for merging
+		
+		return c;   
+	}
+		//array1--[3][5]
+		//array2--[4][6][7][9]
+		//compare 3 with 4 if 3 is lessthan 4  then keep 3 in final array    =>[3]
+		//increase ponter in array1 which means to 5  and now compare 5 with second array frst element 4
+		//here 5 is greter   and 4 is lesser so keep 4 in final array   [3|4]
+		//and increase counter in second array to means 6 so 5<6 so keep 5 in final array [3|4|5]
+		//after copy all elemets in array2 to final aray beacsue those are sorted array     [3|4|5|6|7|9]
+	int[] merge(int []a,int []b)   
+	{
+		int i=0;int j=0;int k=0;
+		int r[]=new int[a.length+b.length];	
+	    while(i!=a.length&&j!=b.length)
+	    {
+	    	if(a[i]<b[j])
+	    	{
+	    		r[k]=a[i];
+	    		i++;
+	    		k++;
+	    	}
+	    	else if(a[i]==b[j])
+	    	{
+	    		r[k]=a[i];
+	    		i++; j++;k++;
+	    	}
+	    	else if(a[i]>b[j])
+	    	{
+	    		r[k]=b[j];
+	    		j++; k++;
+	    	}
+	    }
+	    //if there is any elemetns let in array a or array b
+	    if(i<a.length)
+	    {
+	    	while(i!=a.length)
+	    	{
+	    		r[k]=a[i];
+	    		k++; i++;
+	    	}
+	    }
+	    else if(j<b.length)
+	    {
+	    	while(j!=b.length)
+	    	{
+	    		r[k]=b[j];
+	    		k++; j++;
+	    	}
+	    }
+	}
+	return r;
+			
+	}
+}
+
+//divide array into two halfs 
+//and we need to sort both the halfs 
+//once both the sorts 
+//call the merge2sorted array 
+//sorted array should be merged
+---------------------------------------------------------------------
+
+Quick sort:pick a pivot element  which dividies the array  into two halfs in sucj a way elemtns smaller  in left side and 
+greter in right side
+1) three steps 
+  a)bring pivot at correct position so taht left side is smaller then pivot and right side greter than pivot
+   b)quick sort left part 
+   c)quick sort right side
+
+Always pick first element as pivot.
+Always pick last element as pivot (implemented below)
+Pick a random element as pivot.
+Pick median as pivot.
+
+
+if an elemnt is sorted order the all elemetns left side are smaller thatn that and all the elemetns right side larger thatn tthat
+this is also follows didivde and conquer method
+1)take lower as i and maximum as j  [0][1][2][3][4][5][6][7][8]
+2)increment i   until u find grerthatn than:pivot 
+     and decremtn j untill smaller than pivot 
+        if yes swap those elemts
+
+
+3)divide partioitn and pivot as smaller elemets in left side and higher eleemnts are at right side
+
+
+/* low  --> Starting index,  high  --> Ending index */
+quickSort(arr[], low, high)
+{
+    if (low < high)
+    {
+        /* pi is partitioning index, arr[pi] is now
+           at right place */
+        pi = partition(arr, low, high);
+
+        quickSort(arr, low, pi - 1);  // Before pi
+        quickSort(arr, pi + 1, high); // After pi
+    }
+}
+
+complexity in worse O(n2) 
+===========================================================
+
+insertion sort
+playing crds
+1:second eleent comparing with previosu elements
+2:third elemtn comapred with previous elemetns	
+3)foruth element coampre with 3 and 2nd and first then only it palced there
+4)temp value is comared with index value
+ 5)temp value =i+1
+   previous value i
+// Sort an arr[] of size n
+insertionSort(arr, n)
+Loop from i = 1 to n-1.
+……a) Pick element arr[i] and insert it into sorted sequence arr[0…i-1]
+
+
+Time Complexity: O(n*2)
+Complexity	Best Case O(n)	Average Case=o(n*2)	Worst Case:o(n2)
+public class InsertionSort {  
+public static void main(String[] args) {  
+    int[] a = {10, 9, 7, 101, 23, 44, 12, 78, 34, 23};  
+    for(int k=1; k<10; k++)   
+    {  
+        int temp = a[k];  
+        int j= k-1;  
+        while(j>=0 && temp <= a[j])  
+        {  
+            a[j+1] = a[j];   
+            j = j-1;  
+        }  
+        a[j+1] = temp;  
+    }  
+    System.out.println("printing sorted elements ...");  
+    for(int i=0;i<10;i++)  
+    {  
+        System.out.println(a[i]);  
+    }  
+}  
+}  
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+77.Depency injection
+one object supplying dependecies to other obejct	
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+78.using this() calling construtor of same class
+one object supplying dependecies to other obejct	
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+79.random class in util and generate random values
+it is used to generate random values  
+Random rn=new Random();
+int i= rn.nextInt(200); --generatee random values lessthan 200
+one object supplying dependecies to other obejct	
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+80.static calss memebrs ,instance object level memebrs
+sttic class laidng 
+instance objecting loads by jvm automatically
+one object supplying dependecies to other obejct	
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+81
+parseint is in Integer clsaa
+converts string to inteer --returns integer valeus 
+if it faiils it thors
+--------------
+82)
+this --it holds obj address ,it is used to access both static memebrs and non satic objet levle memebrs
+using this access static and non stsatic members 
+it must be used only in non static contexts
+-------------------------------
+83)
+Continue:It termnates current execution of a loop
+after termination current iteration ,it conintue withe next iteration of loop
+if (i==5) continue whihc means it terminates 5 and terminate that iteariotn
+-----------------------------------
+84)
+data conversations
+byte(primitie)---Byte
+-------------------------------
+85)for each loop --
+ int ary[]={10,20,30,40,50};	  
+for(int ele:ary) { 	   sum=sum+ele; }
+------------------------------
+86)In the process of chuld creation JVM ocnstruc parentn object first AND THEN child object
+---------------
+87)command promit is operaing system
+whnever we req os to start then it interpreter class file
+whver v r exc we cna pass arguments or inputs
+main method progrm execiton start 
+main(string srgs[])--- resposnile to collect arguments  ,
+java program colelcts in string foramt 
+public static void main(String arg[])
+	   {
+	     if(arg.length==2)
+	      System.out.println("Sum = "+ (Integer.parseInt(arg[0]) + Integer.parseInt(arg[1])));
+	     else
+	      System.out.println("Insufficient arguments");
+	    }
+----------------------------------
+88)private modifier can be appied to class members 
+***not to class  and not to blocks
+private emebrs accssed with on the class
+----------------------------
+89)Super :used access parent calss construotr	
+intiaizes parent class objects in the process of child creations
+it is used only in child class construor
+call to super() should be first statement
+--------------------------------------
+90)
+Output of below code
+class Test
+	{
+		public static void main(String[] args) 
+		{
+			System.out.println(0.10/10);
+		}
+	}
+
+O/p:0.01
+===================================================
+91)
+class Test
+	{
+		
+		public static void main(String[] args) 
+		{
+			byte c=0;
+			c++;
+			System.out.println(c);
+		}
+	}
+O/p:1
+====================================
+92)Output
+public class Test
+{
+	public  void print(Object ob) {
+System.out.println(" Object…");
+}
+	public  void print(Integer  valu) {
+		System.out.println(" Object…");
+}
+
+public static void main(String[] args) {
+	Test ov = new Test();
+	ov.print(null);
+
+} }
+
+result is :Null
+because value passsed in null,here object can hold null values
+=====================================
+93.public class Test
+{
+	
+public static void main(String[] args) {
+	String str="Sreedhar kamera";
+	char ch[]=str.toCharArray();
+	for(int i=str.length()-1;i>=0;i--)
+	{
+		System.out.print(ch[i]);
+	}
+
+} }
+===================================================================================
+94.
+public class Test
+{
+	
+public static void main(String[] args) {
+			String str;
+	
+	        Scanner in = new Scanner(System.in);
+	
+	        System.out.println("Enter your String");
+	
+	        str = in.nextLine();
+	
+	        String[] token = str.split("");    //used split method to print in reverse order
+	
+	        for(int i=token.length-1; i>=0; i--)
+	
+	        {
+	
+	            System.out.print(token[i] + "");
+	
+	        }
+            }
+
+	}
+=========================================================================================
+95.swapping values
+public class Test
+{
+	
+public static void main(String[] args) {
+			int x;
+			int y;
+			
+			Scanner sc=new Scanner(System.in);
+			x=sc.nextInt();
+			y=sc.nextInt();
+			//x=1,y=2
+			x=x+y;//x=3
+			y=x-y;//y=1
+			x=x-y;//x=2
+			
+			System.out.println(x+" "+y); } }
+====================================================================================
+96.Program to count the number of words in a string using HashMap. or to find unique words or duplicate words
+public class Test
+{	
+	static void duplicatewords(String str)
+	{
+		String s2[]=str.split(" ");
+		Map<String,Integer> map=new LinkedHashMap<String,Integer>();
+        for(int i=0;i<s2.length;i++)
+        {
+        	if(map.containsKey(s2[i]))
+        	{
+        		int count=map.get(s2[i]);        	
+        		map.put(s2[i], count+1);
+        	}
+        	else
+        	  { 
+        		map.put(s2[i], 1);
+        	  }
+        }        
+        Iterator<String> itr=map.keySet().iterator(); //iterator
+        while(itr.hasNext())	
+        {
+        	String temp=itr.next();
+        	if(map.get(temp)==1)
+        	{
+        		//System.out.println("the word " +temp+ " apprear "+map.get(temp)+ " no of times");
+        		System.out.println(temp +":-->"+map.get(temp));
+        	}
+        }
+        
+	}
+  public static void main(String[] args)
+   {
+	  duplicatewords("this this is done by sreedhar sreedhar");	
+	
+     } 
+}
+===========================
+97.
+public class Test
+{	
+	static void duplicatecharecters(String str)
+	{
+		char[] ch=str.toCharArray();
+		//for(int i=0;i<ch.length;i++)
+		//{
+			//System.out.println(ch[i]);
+	//	}
+        
+		Map<Character,Integer> map=new LinkedHashMap<Character,Integer>();
+		for(int i=0;i<ch.length;i++)
+		{
+			if(map.containsKey(ch[i]))
+			{  
+				int count=map.get(ch[i]);
+				map.put(ch[i], count+1);
+			}
+			else
+			{
+				map.put(ch[i], 1);
+			}
+		}
+		System.out.println(map);
+		
+		Iterator<Character> itr=map.keySet().iterator();
+		while(itr.hasNext())
+		{
+			char ch1=itr.next();
+			if(map.get(ch1)>1)
+				System.out.println(ch1+":-->"+map.get(ch));
+		} 
+ 	}
+  public static void main(String[] args)
+   {
+	  //duplicatewords("this this is done by sreedhar sreedhar");	
+	  duplicatecharecters("iaammsreedhar");	
+	
+     } 
+}
+====================
+98.
+public class Test
+{
+
+    public static void main(String[] args) {
+
+        int num, a = 0,b=0, c =1;
+
+        Scanner in = new Scanner(System.in);
+
+        System.out.println("Enter the number of times");
+
+        num = in.nextInt();
+
+        System.out.println("Fibonacci Series of the number is:");
+
+        for (int i=0; i<=num; i++) {
+
+            a = b;
+
+            b = c;
+
+            c = a+b;
+
+            System.out.println(a + "");    //if you want to print on the same line, use print()
+
+        }      
+
+    }
+
+}
+=============================================
+99.
+public class Test
+{
+    static void dupchars(String str)
+    {
+    	char ch[]=str.toCharArray();
+    	for(int i=0;i<ch.length;i++)
+    	{    int count=0;
+    		for(int j=i+1;j<ch.length;j++)
+    		{
+    			if(ch[i]==ch[j])
+    			{
+    				System.out.println(ch[j]);
+    				count++;
+    				break;
+    			}
+    		}
+    	}
+    	
+    }
+    public static void main(String[] args) {
+
+       dupchars("ssreedhharr");
+
+    }
+
+}
+========================
+100.replace space with replace fucntuon
+public class Test
+{
+    
+    public static void main(String[] args) {
+
+    	String str1 = "Saket Saurav        is a QualityAna    list";
+    	String s2=str1.replaceAll("\\s", "");
+    	System.out.println(s2);
+
+    }
+
+}
+========================================================
+101.
+public class Test
+{    
+    public static void main(String[] args) 
+    {
+
+    	String str1 = "Saket Saurav        is an Autom ation Engi ne      er";
+    	
+    	StringBuffer str2=new StringBuffer();
+    	//StringBuilder str2=new StringBuilder();
+    	
+    	char ch[]=str1.toCharArray();
+    	for(int i=0;i<ch.length;i++)
+    	{
+    		if(ch[i]!=' '&&ch[i]!='\t')
+    			str2.append(ch[i]);
+    	}
+    	System.out.println(str2);
+
+    }
+
+}
+========================
+102
+difference between .equls and ==
+== is for reference comaprision/address comaprision
+.equal contenct comaprisions
+string s1=new String("durga");
+String s2=new String("durga");
+
+Sop(s1==s2) false    s1 pointing one object and s2 poiitng to different object
+sop(s1.equals(s2)) true
+==============================
+103
+difference BW hashcode and equals
+hashcode:providing memory identification number by jvm
+
+if hashcode same and data is same then it is treated as duplicte value
+'In Integer class hascode and equals method are overridden implicitly
+
+all wrapeer classes implemented hashcode and equals method integer,dounle
+
+so whenever we write program we need to override hashcode and equals method 
+
+---
+so 
+if two equal hascde is same at athat time equals method comes into picture (used
+ contians checked ,if content is also same 
+i.e hascode is same and content is same that will be a duplicate value   (duplicate object)
+********simply verride
+
+=========================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	class A {
+private strig name;
+private address;
+getters and setters
+}
+a a1=new A();
+a1.se5tname
+a1.setname()
+
+class A
+{
+privae sting nnsam
+name
+
+a a1=new A();
+a1.se5tname
+a1.setname()
+
+hashmap a1=h1 hashmap<>
+
+h1.a1("happy");
+
+a a2=new A()
+a2.set(
+a2.set(infosys):
+h1.get(a2);
+
+
+sorting
+type erazer
+single design pattern
+---------------------------------
+87[6 2 3 1 5 4 8]
+
+[6 2 3 1 5 4 8]
+
+
+
+class A{
+public String name;
+public String address;
+--- setter and getter ---
+}
+
+class Test{
+
+public static void main(String[] args){
+
+A a1= new A();
+a1.name = "Sreedhar";
+a1.address = "Infosys";
+
+HashMap<A, String> h1 = new HashMap<>();
+h1.put(a1, "Happy");
+
+
+A a2 = new A();
+a2.name = "Sreedhar";
+a2.address = "Infosys";
+
+System.out.println(h1.get(a2));
+
+}
+}
+
+
+
+
+List l1 = new ArrayList();   --with out generics not safety and retrive we need type castin
+List<?> l2 = new ArrayList();
+List<String> l3 = new ArrayList();
+
+
+function test(List<Number> x){
+--- do something ---
+}
+
+public static void main(String[] args){
+List<Number> l2 = new ArrayList();
+List<Integer> l3 = new ArrayList();
+
+test(l2);
+test(l3);
+}
+
+
+type erasure ---
+
+class A{
+public String name;
+public String address;
+--- setter and getter ---
+}
+
+class B extends A{
+private String number;
+-- getter and setter ---
+}
+
+public interface X{
+
+A myMethod() throws Exception;
+}
+
+public class Y implements X{
+
+B myMethod() throws ArthimeticException{
+
+--- do something ---
+
+}
+
+}
+
+
+volatile 
+ThreadLocal
+
+@FunctionalInterface
+
+T1    T2
+1      1
+2       2
+        3
+        4
+        
+        1 1
+        2 2
+        
+        
+        
+        T1.emp=t2.emp(+)
+        1 1
+        1 2
+         1 2
+         2 2
+         1 3
+         1 4
+        
+        
+         1 1
+         2 2
+        null 3
+        null 4
+        
+
+
+
+87[6 2 3 1 5 4 8]
+
+[6 2 3 1 5 4 8]
+
+
+
+class A{
+public String name;
+public String address;
+--- setter and getter ---
+}
+
+class Test{
+
+public static void main(String[] args){
+
+A a1= new A();
+a1.name = "Sreedhar";
+a1.address = "Infosys";
+
+HashMap<A, String> h1 = new HashMap<>();
+h1.put(a1, "Happy");
+
+
+A a2 = new A();
+a2.name = "Sreedhar";
+a2.address = "Infosys";
+
+System.out.println(h1.get(a2));
+
+}
+}
+
+
+
+
+List l1 = new ArrayList();   --with out generics not safety and retrive we need type castin
+List<?> l2 = new ArrayList();
+List<String> l3 = new ArrayList();
+
+
+function test(List<Number> x){
+--- do something ---
+}
+
+public static void main(String[] args){
+List<Number> l2 = new ArrayList();
+List<Integer> l3 = new ArrayList();
+
+test(l2);
+test(l3);
+}
+
+
+type erasure ---
+
+class A{
+public String name;
+public String address;
+--- setter and getter ---
+}
+
+class B extends A{
+private String number;
+-- getter and setter ---
+}
+
+public interface X{
+
+A myMethod() throws Exception;
+}
+
+public class Y implements X{
+
+B myMethod() throws ArthimeticException{
+
+--- do something ---
+
+}
+
+}
+
+
+volatile 
+ThreadLocal
+
+@FunctionalInterface
+
+T1    T2
+1      1
+2       2
+        3
+        4
+        
+        1 1
+        2 2
+        
+        
+        
+        T1.emp=t2.emp(+)
+        1 1
+        1 2
+         1 2
+         2 2
+         1 3
+         1 4
+        
+        
+         1 1
+         2 2
+        null 3
+        null 4
+        
+===============
+public class Test {
+	   public static void main(String[] args) {
+	      String str = "Guitar is instrument and Piano is instrument";
+	      String[] strArray = str.split(" ");
+	   
+	      Map<String, String> hMap = new LinkedHashMap<String, String>();
+	      
+	     // System.out.println(hMap.containsKey(strArray[1]));
+	      for(int i = 0; i < strArray.length ; i++ ) {
+	         if(!hMap.containsKey(strArray[i])) {
+	            hMap.put(strArray[i],"Unique");
+	           // System.out.println(strArray[i]);
+	         }         
+	      }
+	      System.out.println(hMap);		
+	   }
+	}
+
+
+=================hash code and equals=====
+110.Type eraser:  remove type checking after comiple time and insert type casting	
+Generics in java added for type checking at compile time and it has no use at run time
+so java comipler uses
+obj comparing equals
+equlas need to obveride
+id name
+id name
+it shd equal
+hashcode():
+
+
+=========
+springboot 3 shd have java 17 
+selaed classes :classes or interfaces restircts which other classes can extend or implement 
+for example Animal has abstract method  
+===Lombok 
+getter and setter,tostring ,equal methods ,noargsconstrucot ,allargsconstruor
+also theer is annottion @Data which takes care of everything of getter,setter,tostring,equal ,noargsconsturo also
+

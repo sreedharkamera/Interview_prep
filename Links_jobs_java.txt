@@ -1,0 +1,36 @@
+https://www.naukri.com/mnjuser/profile
+sreedharkamera4@gmail.com
+july
+
+
+https://www.foundit.in/user
+sreedhar.kamera@gmail.com
+july
+
+https://www.linkedin.com/feed/
+sreedharkamera4@gmail.com
+july
+
+==java==
+https://www.oracle.com/java/technologies/downloads/#jdk21-windows
+C:\Program Files\Java\jdk-21\bin
+sts 
+https://spring.io/tools
+intellij
+https://www.jetbrains.com/idea/download/download-thanks.html?platform=windows&code=IIC
+
+Java, Spring Boot, PostgreSQL, Spring Data JPA, Hibernate CRUD REST API Tutorial [2025]
+https://www.youtube.com/watch?v=v1IFQWzuSrw
+microservices
+https://www.youtube.com/watch?v=iWJzmV0xRVE&t=12901s
+
+Latest Java Spring Boot Tutorial for Beginners | Spring Boot Full Course with Projects in 15 Hours
+https://www.youtube.com/watch?v=Kq-DRboTVrc&t=30622s
+
+Spring Boot REST API Project Course | Build 2 Spring Boot REAL-TIME REST API Projects in 3 Hours
+https://www.youtube.com/watch?v=vpf4LB54rVw
+Spring Boot Project | Banking Application using Spring Boot 3, Spring Data JPA (Hibernate), & MySQL
+https://www.youtube.com/watch?v=5i379k0Xh_s
+
+mysql :3306
+root

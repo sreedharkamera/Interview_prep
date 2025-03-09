@@ -1,0 +1,87 @@
+REALTIME INTERVIEW QUESTION ASKED IN INTERVIEW RECENTLY
+==================================================================
+1)where do u apply spring security in your application??
+2)how do u manage your code in your application??
+3)what is distributed technology?
+4)what are challenges do u face when in you are in project???
+5)where do u get bug?in your project? how and where do u fix it?
+6)how do u improve the performance of the employee(if he is ur customer) in project?
+7)what is ur Roles & responsibilty?
+8)how do u configure security in your springboot application?
+9)how to configure the LOG4J in Springboot?
+10)which design pattern you used in your project?
+11)are u used any type of caches in ur project? if yes, then where did u implemented in ur project?
+12)if i controller layer and @request mapping i want use @Request Body in get mapping which 
+annotation we have to use?
+13)which junit version did u use in ur project? if use this version is this version supports mockito?
+14)what is the use of @injectmock and @mock annotation?
+15)what is code coverage and code quality?
+16)the message to be printed first followed by timeStamp again followed by the logging level so, can 
+i custom it?
+17)i want configure my logging pattern how can i do it?
+18)assume i have a controller as per requirement i want to a REQUEST BODY to it and what iam 
+telling to use REQUEST BODY to GETMAPPING and what should be the data type for it?
+19) i have a Controller and i have a GetMapping now requirement comes in i want to add a REQUEST 
+BODY to my GETMAPPING? a REQUEST BODY to be added to a GETMAPPING so, what annotation do 
+we need to use?
+20)i have GETMAPPING i want to PATH PARAM which are add QUERY PARAM change its data type 
+to a list or list of strings? so, it is possible to have a list of string as QUERY PARAM or PATH PARAM?if 
+it fails do we get any Exceptions?
+21)can we transfer files one MICROSERVICE to another MICROSERVICE by using REST TEMPLATE?ok 
+u r saying we can transfer what will be media type?
+22)if u r using JUNIT version 4. something is it supports MOCKITO ?
+23)can u tell me what is the use of @MOCK BEAN annotation?
+24)have u used any even drive based architecture?
+25)have u implemented any CACHE?
+26)what about code coverage nad code quality?how you do it im asking in ur project?
+27)how do u see urself it we want to fetch large volume of data from database? where do u face 
+typical problem that u faced in mysql to get the data?
+28)what is the maximum vaolume of that are inserted how many records in ur database?
+29)waht is the most difficult problem that u are solved?
+30)you worked for the last 3 1/2 yrs what most challenging problem u faced?
+31)can u explain u have completed almost 2yrs on this asset management lab project what is the 
+architecture of this project?
+32)did u face any memory isues ?
+33)have u created Custom exception in ur project?
+34)how do u configure two databases in springboot appliaction?
+35)how will u protect ur apis i ur springboot project?
+36)in which layer u have used interface in project?
+37)which METHODOLOGY did u follow in ur project?
+38)how many changes did u do in ur project?
+39)how the work is assigned to you in ur project?
+40)how did u guide ur juniors in ur team project?
+41)what are ur Strengths?
+42)what are u r weaknesses?
+43)why do u want to change the comapny?
+44)how do u test u r project?
+45)how do u fetch the data from MONGODB?
+46)what is the flow of the Springboot application?
+47)how to consume RestApi?
+48)describe the flow of RestApi HTTP requests through the Springboot application?
+49)how Springboot internally works on Explain Run() method in springboot?
+50)what is Springboot starters and name few important Springboot Starter dependencies?
+51)i have to create an application , iam going to create an CRUD application, can u tell me step by 
+step all the process to create SpringBoot from Scratch? to try to store records in your database?
+52) which version r u using in ur project:
+a) Mysql
+b)MongoDb
+c)Tomcat server
+d)Spring version
+e)Springboot version
+f)Junit version with support of MOckito
+g)Jdk version 
+53)do u have any idea about Swagger? have u used it in u r application?
+54)if in your team only u completed the TASK remaining are not, what are the actions will u take?
+55)Suppose --local system what repository u are using here, what git repository Git or GitBucket?
+56)saving code from local system to GITHUB , how u do that? move u r code from laptop to github, 
+how will u do that?
+57)step by step procedure code to GITHUB?
+58)instead of Everytime clone, has to be clone only once how to do it?
+59)why do we create PULL request?
+60)Real time Example in ur projectEncapsulation?
+61)in which layer u used Interface in ur Project?
+62)how did u secure ur API's in ur Project? not Spring security anythind else?
+63)if i have 2rd party user how i want to access, how will u implement Spring Security?
+64)how do u protect ur APIS's?
+65)if i dont know the user how will u protect API's?
+66)how u test ur API's?

@@ -1,0 +1,215 @@
+Lombok Annotations :
+
+@SneakyThrows - lombok auto handles compile error
+@Cleanup - clean resources
+@synchronized
+@slf4j
+@Builder
+@Value
+@EqualsAndHashCode
+@Delegate - delegate the methods
+@SuperBuilder -
+@UtilityClass
+@ExtensionMethod(______.class)
+@Val
+@With
+@Tolerate
+
+
+LTI internal questions :
+
+Can you write a class that is immutable having Map and custom class object inside
+
+I want to get the first non repeatable letter from a string using stream and without using stream
+
+Write code to sort using inbuilt and brute force (bubble/selection sort) method
+
+Have you used spring security ?
+How do you handle exceptions in Spring?
+
+How do you get the count of repeatation of words in a string?
+
+How do you convert list to map using stream and normal way
+
+Diff bw LinkedHashMap and TreeMap
+
+What are the collections you have come across ?
+
+Have you worked on Service Discovery and are you aware of it ?
+
+Interview Questions LTI :
+
+1. What is overloading and overriding
+2. What are the different types of collections and explain list and set
+3. Example scenario is we have a class where we have a method inside the class so we have to add lock statement before execution of method and after execution of method but we should not disturb the existing method code? He given clue that will decorator pattern help here
+4. Mention like a we have a class bank and class ICICI extends bank and another class HDFC extends bank and another class AXIS extends Bank so on runtime how can we decide which class to use.
+
+Answer given is on basis of a key like a string that we get in the input so we can have another class which will instance sheet an object of the particular class and data. He asked which pattern is this so it is a part of factory method pattern
+
+5. Suppose if a database is taking a lot of time to give the response so how would you optimise it. Answer is using indices.
+6. Suppose the same database is highly read by multiple micro service and still indices are not helping very high so what would help. He has given a hint of cash in I explained about radiscus on the server side.
+7. Give an a practical question of an array and array having multiple elements so will be given a target number let's say 9 so we need to check what pair of elements in the arrival form 9.
+
+
+So initially I have return with two for loops to get the output and it was working fine then he asked for optimised solution so then I got a thought like we first get we first take an element and then subtracted from the target so whatever the element that we got will try to directly search in the list. He mentioned which would be the best approach like hatch map or something so I answered like set hash that or set would be helpful because the first set the travels will be O(1) which will reduce the traverse complexity and improve the performance.
+
+8. What is singleton given example I have given an example of logger.
+9. What is prototype be in and ask to give an example I have given example of instantiating a database database object  
+
+HCL 2nd round questions :
+
+1. What are ACID properties?
+2. What is normalization and denormalization
+3. When does conflict occur in HashMap ?
+4. Diff bw ArrayList and LinkedList ? Get deep difference.
+5. Diff bw Map or HashMap of Java 7 and Java 8
+
+Interview questions Java and spring :
+
+Using spring security for securing micro services
+What are the built innotations of Java
+Uses of openapi
+What is saga pattern, messaging
+What is rxjs and properties of RX JS
+Diet code for permutations of a string i e. But factorial with recursive function
+Write a code to find the max of a array
+Write a quote to reverse linked list
+What are collections and stream   
+
+ Mindtree Interview questions :
+
+1. What is the use of primary annotation in springboard
+2. What is saga pattern micro services
+3. What is circuit breaker pattern in micro services
+4. Class be extend class a, class c extent class b
+Will C c = new A() work ?
+5. What are the directives in angular?
+6. What are the stereotype annotations in Spring? Interviewer said only 5 annotations are there.
+7. Difference between primary and qualifier annotation?
+8. What is event handling in angular or JavaScript?
+9. Practical question is there is employee class having salary ID and name as fields. Get a list of IDS which has salary greater than 10000 and sorted by name.
+10. String s1 = new ("A")
+String s2 = "A"
+String s3 = new ("A")
+Output of s1 == s2
+
+11. What are the patterns you are aware in Java?
+12. How do you exact execute sequentially if for multiple threats are trying to access a singleton pattern or singleton object?
+13. Suppose the default method is there in two interfaces how would that work if two interfaces are implemented are inherited in 3rd class?
+14. What is multilevel inheritance?
+15. Why multiple inheritance is not achievable through Java?
+16. Types of routing in angular ? Eager loading, Lazy loading, PreLoading
+
+
+Cognizant interview questions :
+
+Diff bw Map and Flat Map
+Diff bw Callable and Runnable
+What is circular dependency
+What is the use of qualifier annotation
+Difference between entity and table annotation
+Basic Server provided in spring boot
+Given a scenario to write code for sorting based on age and name using comparator
+What are the types of functional interface that Java 8 has provided
+Difference between fail fast and fail safe
+What is an ExecutorService ?
+What is the use of thread join method
+What is optional in Java  
+
+Wipro Interview Questions :
+=========
+What is API Gateway ?
+Water design patterns in micro services?
+Provide three points why Microservices is are important?
+What is load balancing?
+What is horizontal scaling and vertical scaling?
+Types of Scope of a bean in Spring?
+Why spring boot is advantages over spring?
+What takes the ambiguity out while auto wiring a service?
+Name the Methods of spring JPA?
+What are decorators angular?
+But what happened when you are trying to manipulate a key value pair in map while multiple threats are doing the task?
+How to transfer data from one component to another component angular?
+What is jwt, OAuth2, OAuth0? How do you do authentication and authorisation ? Explain in deep?
+How do we ensure security in spring ?
+Service discovery ?
+Code coverage using sonar ?
+CRUD methods of Spring ? Like save, saveAndFlush, fundById, findAll
+
+Interview questions :
+
+Diff bw collections and collection
+Example of Predicative()
+Use of transient annotation
+Make a list of objects into a Map and sort based on it's value in java
+Features of latest Angular
+Features of latest Java version
+
+Render only objects having duplicate salary from a list in Js
+
+Diff bw Controller and Rest Controller ?
+How to make Controller a Rest without Rest Controller annotation?
+A code snippet of calling a function passing null value.
+Use of default and static methods in interface. Can we override them in child class ?
+What would set return if adding duplicate into set ?
+Diff bw HashTable and HashSet
+Write code for Thread Safe Singleton Pattern ?
+What are Synchronisation and synchronized block. Which is better and their uses ?
+What is Thread Safety ?
+What is concurrentHashMap ?
+What is IOC Container in Spring ?
+Spring IOC
+Spring AOT
+Spring AOP
+
+SOLID principles and concept
+Angular Life Cycle
+Trapping in rain harvesting
+What is equals hashcode contract ?
+
+Interview questions :
+What is difference between vanilla Java and Spring Boot
+
+Pom.xml used for
+
+What is AutoWiring
+
+How do you compare a string in java
+
+Check if an object is there in a list
+
+What are POJOS or DTOS
+
+How do you convert string to Json and json to string
+
+How to you make HTTP calls
+
+Difference between post and get mapping
+
+How to pass headers while making Http Calls
+
+What is a constructor
+
+How do you instantiate an Array? What if we instantiate an array to null
+
+Any idea on SQL or DBMS ? What are the types of joins. Types of constraints
+
+What is Entity and repository? How to define those in Spring ?
+
+What is your opinion on taking extra time to learn or working only 9 to 6 ?
+
+Are you willing to be a Full Stack Developer if you get opportunity?
+
+Interview questions :
+
+Access private method in Test Case in Spring
+Make a list from flat map lists using Stream
+Singleton Design Pattern
+How to display other country time like US when server is in Germany
+Diff getForObject and getForEntity
+Will jar run if we delete a .class file from jar
+2nd highest salary in sql
+Microservices vs Monolithic architecture
+What is the use of impl Serializable on class
+Features of Java 8
+What is component in Angular  

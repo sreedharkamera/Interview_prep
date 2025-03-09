@@ -1,0 +1,32 @@
+=============CTS===================
+java and springboot version
+1.Navigable Iterator in Java
+2.If your Spring Boot application is designed to handle 50 requests but receives 60, 
+you have a few options to ensure performance and stability:
+
+3.application 3 interfaacrs 2 are down (rollback)
+4.where we can store queries in springboot 
+5.Springdata JPA in detail
+
+=============Bank of america===================
+1)Tell me about yourslef and project and challenges in project 
+2)Java and springboot version (preferrelgy 17)
+3)features of java 17 how we used in project 
+4)How we get userid from the http get request in code
+5)How JWT token created ,how we use the JWT toekn in our ptoject
+6)difference OAUTH 1.0 vs Oauth 2.0
+7)How to get client address from the request
+8)example of factory pattern
+9)is cloud migration is open shift
+10)diff API gateway and service mesh 
+11)Load balencer usage 
+12)how do you change server url in container
+13)what are sealed classes
+14)what happends if we start thread twice(t.run) 
+15)diffrennce between thread class and runnable interface 
+16)Can you override private method 
+17)how to call one microservice from another 
+18)have you valted passowrd to cyberark
+19)jsp vs servlet 
+20)forward vs redirectio of jsp 
+21)@qualifier usage in springboot 

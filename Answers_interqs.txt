@@ -1,0 +1,592 @@
+1.Can you write a class that is immutable having Map and custom class object inside
+Answer:
+Certainly! In Java, an immutable class means that once an instance of the class is created, its state cannot be modified. 
+To achieve immutability, you need to:
+
+Declare the class as final to prevent subclassing.
+
+Make all fields private and final to prevent direct modification.
+
+Initialize fields only in the constructor.
+
+Avoid providing setter methods that modify fields.
+
+For reference types like Map and custom objects, make sure to either clone them or return unmodifiable views to prevent external modifications.
+
+Here’s an example of an immutable class that contains a Map and a custom class object.
+
+Example:
+java
+Copy
+import java.util.Collections;
+import java.util.Map;
+
+// Custom class for demonstration
+class CustomClass {
+    private final String name;
+
+    public CustomClass(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+}
+
+// Immutable class with Map and CustomClass object
+public final class ImmutableClass {
+    private final Map<String, String> data;
+    private final CustomClass customObject;
+
+    // Constructor initializing the fields
+    public ImmutableClass(Map<String, String> data, CustomClass customObject) {
+        // Create a defensive copy of the Map to ensure immutability
+        this.data = Collections.unmodifiableMap(data);
+        
+        // Create a defensive copy of the CustomClass object
+        this.customObject = new CustomClass(customObject.getName());
+    }
+
+    // Getter methods (no setters to prevent modification)
+    public Map<String, String> getData() {
+        return data;
+    }
+
+    public CustomClass getCustomObject() {
+        return customObject;
+    }
+}
+Key Points:
+Map Field: The Map<String, String> is made immutable using Collections.unmodifiableMap(data). 
+This prevents any modification to the map after the object is created.
+
+Custom Class Field: The CustomClass object is cloned (or deeply copied, if needed) to ensure its immutability. 
+In this case, the CustomClass constructor is used to create a new instance.
+
+No Setter Methods: There are no setters in the class, ensuring the fields can't be modified after instantiation.
+
+Final Class: The class is declared final to prevent subclassing, which could potentially break immutability.
+
+Usage Example:
+java
+Copy
+import java.util.HashMap;
+
+public class Main {
+    public static void main(String[] args) {
+        // Create an instance of CustomClass
+        CustomClass custom = new CustomClass("Example");
+
+        // Create a map
+        Map<String, String> map = new HashMap<>();
+        map.put("key1", "value1");
+        map.put("key2", "value2");
+
+        // Create an instance of ImmutableClass
+        ImmutableClass immutableClass = new ImmutableClass(map, custom);
+
+        // Access data
+        System.out.println(immutableClass.getData());
+        System.out.println(immutableClass.getCustomObject().getName());
+
+        // Attempting to modify the map or custom object will result in errors
+        // immutableClass.getData().put("key3", "value3"); // Throws UnsupportedOperationException
+        // immutableClass.getCustomObject().setName("New Name"); // No setter, compilation error
+    }
+}
+Summary:
+In this example, the ImmutableClass ensures that its fields (Map and CustomClass) cannot be modified after construction, maintaining immutability.
+
+=====================================================================================================================================
+I want to get the first non repeatable letter from a string using stream and without using stream
+import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+public class FirstNonRepeating {
+    public static void main(String[] args) {
+        String str = "swiss";
+
+        Character result = str.chars()
+            .mapToObj(c -> (char) c)
+            .collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting()))
+            .entrySet()
+            .stream()
+            .filter(e -> e.getValue() == 1)
+            .map(Map.Entry::getKey)
+            .findFirst()
+            .orElse(null);
+
+        System.out.println("First non-repeating character: " + result);
+    }
+}
+Converts the string into a stream of characters.
+
+Uses a LinkedHashMap to keep track of character counts while maintaining insertion order.
+
+Filters for the first character with a count of 1 and returns it.
+
+--
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+public class FirstNonRepeatingCharacter {
+    public static void main(String[] args) {
+        String input = "swiss";
+        System.out.println("First non-repeating character: " + findFirstNonRepeating(input));
+    }
+
+    public static Character findFirstNonRepeating(String str) {
+        Map<Character, Integer> charCountMap = new LinkedHashMap<>();
+
+        // Count occurrences of each character
+        for (char ch : str.toCharArray()) {
+            charCountMap.put(ch, charCountMap.getOrDefault(ch, 0) + 1);
+        }
+
+        // Find the first character with count 1
+        for (Map.Entry<Character, Integer> entry : charCountMap.entrySet()) {
+            if (entry.getValue() == 1) {
+                return entry.getKey();
+            }
+        }
+        return null;
+    }
+}
+=================================================================
+3.Write code to sort using inbuilt and brute force (bubble/selection sort) method
+
+Using Java's Inbuilt Sort (Arrays.sort)
+import java.util.Arrays;
+
+public class SortingExample {
+    public static void main(String[] args) {
+        int[] arr = {5, 2, 9, 1, 5, 6};
+
+        Arrays.sort(arr); // Inbuilt sorting
+
+        System.out.println("Sorted using inbuilt sort: " + Arrays.toString(arr));
+    }
+}
+Uses Arrays.sort(), which implements Dual-Pivot QuickSort for primitives and TimSort for objects.
+--
+import java.util.Arrays;
+
+public class BubbleSortExample {
+    public static void main(String[] args) {
+        int[] arr = {5, 2, 9, 1, 5, 6};
+
+        bubbleSort(arr);
+
+        System.out.println("Sorted using Bubble Sort: " + Arrays.toString(arr));
+    }
+
+    public static void bubbleSort(int[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) { // Swap if needed
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+    }
+}
+Repeatedly swaps adjacent elements if they are in the wrong order.
+
+Time Complexity: O(n²) (worst case).
+
+--
+import java.util.Arrays;
+
+public class SelectionSortExample {
+    public static void main(String[] args) {
+        int[] arr = {5, 2, 9, 1, 5, 6};
+
+        selectionSort(arr);
+
+        System.out.println("Sorted using Selection Sort: " + Arrays.toString(arr));
+    }
+
+    public static void selectionSort(int[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n - 1; i++) {
+            int minIndex = i;
+            for (int j = i + 1; j < n; j++) {
+                if (arr[j] < arr[minIndex]) {
+                    minIndex = j;
+                }
+            }
+            // Swap min element with first element
+            int temp = arr[minIndex];
+            arr[minIndex] = arr[i];
+            arr[i] = temp;
+        }
+    }
+}
+Finds the minimum element in the unsorted part and swaps it with the first unsorted element.
+
+Time Complexity: O(n²)
+=============================================
+4
+
+Authentication → Verifies user identity (e.g., login with username/password).
+
+Authorization → Controls what users can access (e.g., admin vs. regular user).
+
+CSRF Protection → Prevents cross-site request forgery attacks.
+
+Session Management → Controls user sessions and prevents session hijacking.
+
+OAuth2 & JWT Support → Used for securing REST APIs.
+
+Password Hashing → Uses BCrypt to store passwords securely.
+2. Basic Authentication in Spring Security
+Spring Security automatically secures all endpoints when added to a Spring Boot application.
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-security</artifactId>
+</dependency>
+Step 2: Default Behavior
+Adds Basic Authentication to all endpoints.
+
+Default username: user
+
+Default password: Generated in logs (Using generated security password: XXXXXXX)
+
+Step 3: Custom Username & Password
+Define custom credentials in application.properties:
+
+properties
+Copy
+Edit
+spring.security.user.name=admin
+spring.security.user.password=admin123
+3. Custom Security Configuration (Java-Based)
+To customize authentication and authorization, use SecurityFilterChain (Spring Security 5+).
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.web.SecurityFilterChain;
+
+@Configuration
+public class SecurityConfig {
+
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http
+            .csrf().disable()  // Disable CSRF for APIs
+            .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/admin/**").hasRole("ADMIN") // Only ADMIN can access
+                .requestMatchers("/user/**").hasAnyRole("USER", "ADMIN") // USER & ADMIN can access
+                .anyRequest().authenticated() // All others need authentication
+            )
+            .httpBasic(); // Use basic authentication
+
+        return http.build();
+    }
+
+    @Bean
+    public UserDetailsService userDetailsService() {
+        UserDetails user = User.withDefaultPasswordEncoder()
+            .username("user")
+            .password("password")
+            .roles("USER")
+            .build();
+
+        UserDetails admin = User.withDefaultPasswordEncoder()
+            .username("admin")
+            .password("admin123")
+            .roles("ADMIN")
+            .build();
+
+        return new InMemoryUserDetailsManager(user, admin);
+    }
+}
+xplanation:
+
+Disables CSRF (for APIs).
+
+Restricts access:
+
+/admin/** → Only ADMIN users.
+
+/user/** → USER and ADMIN. **/
+
+Other endpoints require authentication.
+
+Uses in-memory users (user:password and admin:admin123).
+4. JWT-Based Authentication (For APIs)
+4. JWT-Based Authentication (For APIs)
+For token-based authentication, we use JWT (JSON Web Token) instead of sessions.
+
+Steps:
+
+User Logs in → Server issues a JWT token.
+
+Client Sends JWT in Authorization: Bearer <token> header.
+
+Server Validates JWT before processing requests.
+
+Spring Security + JWT Example:
+
+Use spring-boot-starter-security and jjwt dependencies.
+
+Implement a JWT filter to validate tokens.
+
+5. Common Spring Security Interview Questions
+What is Spring Security?
+
+A framework for securing Java applications by handling authentication and authorization.
+
+How do you customize authentication in Spring Security?
+
+Using UserDetailsService to load users from a database.
+
+What is the difference between Authentication and Authorization?
+
+Authentication: Verifies identity (login).
+
+Authorization: Grants access based on roles/permissions.
+
+How do you disable default security in Spring Boot?
+
+Add security.auto-config.enabled=false (for older versions).
+
+In newer versions, override SecurityFilterChain.
+
+What is JWT, and how does it work in Spring Security?
+
+JWT (JSON Web Token) is used for stateless authentication in REST APIs.
+
+Conclusion
+Spring Security simplifies authentication & authorization in Java applications. For web apps, it provides login/logout features, and for APIs, it supports token-based authentication (JWT). 🚀
+
+Would you like a detailed JWT implementation? 😊
+
+==
+
+. Using @ExceptionHandler (Controller-Level Exception Handling)
+You can handle exceptions inside a specific controller using the @ExceptionHandler annotation.
+
+java
+Copy
+Edit
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/api")
+public class MyController {
+
+    @GetMapping("/test")
+    public String test() {
+        if (true) {
+            throw new IllegalArgumentException("Invalid input provided!");
+        }
+        return "Success";
+    }
+
+    @ExceptionHandler(IllegalArgumentException.class)
+    public String handleIllegalArgumentException(IllegalArgumentException ex) {
+        return "Error: " + ex.getMessage();
+    }
+}
+🔹 Explanation:
+
+If an IllegalArgumentException is thrown in this controller, the handleIllegalArgumentException() method catches it and returns a custom message.
+
+This method only works for this specific controller.
+
+2. Using @ControllerAdvice (Global Exception Handling)
+For handling exceptions globally across multiple controllers, use @ControllerAdvice.
+
+java
+Copy
+Edit
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
+
+@RestControllerAdvice
+public class GlobalExceptionHandler {
+
+    @ExceptionHandler(IllegalArgumentException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public String handleIllegalArgumentException(IllegalArgumentException ex) {
+        return "Global Error: " + ex.getMessage();
+    }
+
+    @ExceptionHandler(Exception.class)
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    public String handleGenericException(Exception ex) {
+        return "An unexpected error occurred: " + ex.getMessage();
+    }
+}
+🔹 Explanation:
+
+@RestControllerAdvice makes this applicable to all controllers.
+
+It catches specific exceptions (IllegalArgumentException) and generic exceptions (Exception).
+
+Uses @ResponseStatus to return HTTP status codes.
+
+3. Using ResponseEntityExceptionHandler for Custom JSON Responses
+For structured error responses (like JSON), extend ResponseEntityExceptionHandler.
+
+java
+Copy
+Edit
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
+
+@RestControllerAdvice
+public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
+
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<String> handleIllegalArgument(IllegalArgumentException ex) {
+        return new ResponseEntity<>("Custom Error: " + ex.getMessage(), HttpStatus.BAD_REQUEST);
+    }
+}
+🔹 Explanation:
+
+ResponseEntityExceptionHandler allows returning structured responses with HTTP status codes.
+
+4. Using @ResponseStatus with Custom Exception Class
+If you want to create a custom exception and automatically map it to an HTTP status, use @ResponseStatus.
+
+java
+Copy
+Edit
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
+
+@ResponseStatus(HttpStatus.BAD_REQUEST)
+public class CustomException extends RuntimeException {
+    public CustomException(String message) {
+        super(message);
+    }
+}
+Usage in a Controller:
+
+java
+Copy
+Edit
+@GetMapping("/custom")
+public String throwCustomException() {
+    throw new CustomException("This is a custom exception!");
+}
+🔹 Explanation:
+
+Throws CustomException, which automatically returns 400 Bad Request.
+
+5. Handling Exceptions in Spring Boot REST APIs (JSON Response)
+For REST APIs, return a structured JSON response.
+
+java
+Copy
+Edit
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.time.LocalDateTime;
+
+@RestControllerAdvice
+public class RestExceptionHandler {
+
+    @ExceptionHandler(RuntimeException.class)
+    public ResponseEntity<ErrorResponse> handleRuntimeException(RuntimeException ex) {
+        ErrorResponse errorResponse = new ErrorResponse(
+            LocalDateTime.now(), "Error occurred", ex.getMessage()
+        );
+        return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
+    }
+
+    static class ErrorResponse {
+        private LocalDateTime timestamp;
+        private String error;
+        private String message;
+
+        public ErrorResponse(LocalDateTime timestamp, String error, String message) {
+            this.timestamp = timestamp;
+            this.error = error;
+            this.message = message;
+        }
+        
+        // Getters and setters
+    }
+}
+🔹 Explanation:
+
+Returns a structured JSON response with timestamp, error message, and HTTP status.
+
+Common Interview Questions on Exception Handling
+How do you handle exceptions in Spring?
+
+Using @ExceptionHandler, @ControllerAdvice, ResponseEntityExceptionHandler, and @ResponseStatus.
+
+What is @ExceptionHandler?
+
+It handles exceptions in a specific controller.
+
+What is @ControllerAdvice?
+
+It provides global exception handling across multiple controllers.
+
+How do you return JSON responses for exceptions?
+
+Use @ControllerAdvice with ResponseEntity and custom error response classes.
+
+How do you create a custom exception in Spring?
+
+Create a class extending RuntimeException and annotate it with @ResponseStatus.
+
+Conclusion
+Spring provides multiple ways to handle exceptions efficiently. For web applications, use @ExceptionHandler, and for REST APIs, use @ControllerAdvice with ResponseEntity. 🚀
+====================================================================
+How do you get the count of repeatation of words in a string?
+Using Java Streams (Modern Approach)
+import java.util.*;
+import java.util.stream.Collectors;
+
+public class WordCountStream {
+    public static void main(String[] args) {
+        String text = "apple banana apple orange banana apple";
+
+        Map<String, Long> wordCount = Arrays.stream(text.split("\\s+")) // Split by spaces
+                .collect(Collectors.groupingBy(word -> word, Collectors.counting()));
+
+        System.out.println(wordCount);
+    }
+}
+--
+import java.util.*;
+
+public class WordCount {
+    public static void main(String[] args) {
+        String text = "apple banana apple orange banana apple";
+        String[] words = text.split("\\s+"); // Split by spaces
+
+        Map<String, Integer> wordCount = new HashMap<>();
+
+        for (String word : words) {
+            wordCount.put(word, wordCount.getOrDefault(word, 0) + 1);
+        }
+
+        System.out.println(wordCount);
+    }
+}
+
+=========================================
+
+
+

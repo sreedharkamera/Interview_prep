@@ -1,0 +1,213 @@
+so i will share uh with you all the uh documents we are having like we have added in multiple places uh so that you can go through and you can understand that what all uh thing we are going for so uh let me share the screen i'm audible right yes yes yes you are audible
+
+- Let me know if it is visible. - Yeah, I can. - So in the process like we have written down all the processes in this OLC page. So basically the whole system from the OLC it is migrating to the script. So we are developing there all the creatives or add user, all the profile related stuff with our end.
+
+through the vendors so we are doing those things so why this is needed because this is basically an online courier service where we do the
+
+courier like online courier based on file transfer protocol that is the sftp secure file transfer protocol so we are having two types of like we will be having multiple reports so reports on what if you ask so we are having um like acatdr and the different type of uh payment transaction report statements all those type of reports whatever bank generated or
+
+generated that I will discuss later but we are having several reports from the bank to pass it to users. So we do it through either SFTP pickup, SFTP delivery or via email or there is another preference that is the wave. So
+
+For our site, our team is handling all the file transfer one. So what we do is that whatever statements and bans we get, so like whatever statement, whatever report we get from the bank, we will be delivering it to either like whatever company
+
+client will provide us a server. So into that server we will deliver the report and client either can pick it up or client can give us the delivery location server where we will be delivering it. So the starting of this
+
+particular flow is that to onboard the company. So if you, I am not sure how much you are aware of any, um, related applications. So basically on the bank side, we had to create the company profile and under the company profile, we will be having the user profiles. So that company profile, the user profile, and then, uh, like, uh,
+
+with the company profile in the profile we attach multiple services okay so for the company profile uh we are having separate quality if you um let me open that one as well okay so company profile in the sense it has a separate bank account or what is the difference between this company profile and
+
+It is in company profile and currently setting for particularly for MFT. So to deliver any report we have to set up all the configurations at the MFT end right. So at their MFT end also we have to like MFT is a third party application which basically we are not directly delivering all the SSTP related details like SSTP related
+
+We post directly to the user. We are delivering those reports to a particular outbound folder that is a NASH folder and from there MFT is an application that's a application which actually picks up and delivers to the users or whichever location we give them. So how they are going to deliver it to that particular user or particular location that's how we configure all the profiles at the MFT end.
+
+So we basically how they will know that this report is particular to that particular company, to that particular user, how to deliver it and how like the encryption, decryption process, the SSH validation. So all those things we need to configure it first at the MFT end so that MFT will be able to deliver the file particularly to the users or the company. Okay.
+
+Okay, so one one doubt here. So you said, like, we'll be delivering the documents from the folder, right? So is there any bad jobs or anything that is running every day? So that will look for this outbound folder to deliver it to the customers.
+
+that MSP side we are already having right so that is the SFTP outbound folder Krishna right you should be using that yeah I know that I know that yeah we have outbound folder but my question is is there any job that will look for this outbound folder that will pick up this folder and files and then that will run for every format yeah that runs every MSP whenever I kind of file what is what we said
+
+This is a match folder that we are having currently. Okay, so Sangeeta, job will kind of affect any crown tab or any windows job?
+
+that's basically MFT side so how they will be transitioning completely they matter but they will watch this particular folder our processes are to deliver it up to this folder as it is outbound so what MFT will do MFT will read the file MFT will place it to MFT will deliver to the client so basically two type of delivery method we are currently working on that is a pickup and a delivery
+
+What pickup and delivery means is that when we are attaching a company, right, the company can have multiple users. Now, whatever reports are getting generated, that is for a particular company, right? Only few users can access it. Whoever will be having the permission, correct?
+
+So when the company's report is getting generated, that time company is giving us a server which is called the pickup server to which the user can login and pick up the report. Another delivery method user can choose that is to deliver it to their particular delivery server, SFTP server. So a MFT can deliver to the particular SFTP server, user's SFTP server.
+
+For that, from the UI side, that configuration needed, that company which company is allowing whenever we are onboarding any company profile in our MFT side or in our side also, in our TOV side also, we are creating two primary admins.
+
+So, primary admin will be having all the accesses like to adding any service to the user, to adding anything, like any user.
+
+So basically all the users will be having a separate role like primary admin, admin user like that. So that is completely different matter. It is somehow like it is for all applications whatever I'm saying. It is a generic one. So for the MST for the OLC particular application also same thing we are having. So when the company will be onboarded to a particular
+
+company will be onboarded to our UI site and I think if Shabbir was here I could have shown you the UI but the process is that company someone will be onboarding the company either from the bank side so twist is having a bank side and a client side
+
+So the bank side will be handled by the tourist employees and the client side is anyone like any user like us. Think about it as an online banking application. So you can log in and you can see whatever services you are having, banking services.
+
+Okay, so any user from the, in that particular, in the client side, the company can log in, like company's primary admin can log in, also company's user can log in and they can see all the services, whatever will be assigned to them.
+
+any user based on their permissions so all use all permissions all services permissions or activation permissions or accounts will be assigned to a particular user by a primary admin or by the bank people with bank site through the bank site okay
+
+so like I have one user in the client side you can see how the client side look like but I don't have a bank side user like I don't have access to the bank side so but I don't have much data to show right now the UI so that is I'm not showing but
+
+whatever but whenever user log into the system any user they will be able to see whatever services they are having like they can see all the reports they have whatever report they had they have scheduled the bank generated the template so they can see all types of services if they are eligible to
+
+So here comes like all the custom, all the standard, all the things they will be having access to the payment transfer, they will be having access to the administrative settings if they are even eligible. So all these things can be done via either client side or either
+
+So I have logged into the client side. This is the SFTP pickup and SFTP delivery services. This is the settings and the permission. So whenever the company will be onboarded, that time only we can select which all services they will be eligible to either SFTP pickup or other SFTP delivery you can see.
+
+and which basis we are deciding it whether it is a pickup or whether it is a delivery
+
+Okay, so this is what I am showing you as a part of our primary admin. The primary admin will be having all type of permissions. Okay, so how the web service work is that we are having separate entitlement for each user. Okay, entitlements means having permissions. Correct? So permissions means how permission works is that
+
+to see each step you can see here are the services you can see here at the application you can see here at the account so each account to access each account to access each services you can see here are the real-time payment services info reporting so all the services right so each services you select each application you select each account you select everything will be derived by a permission so that
+
+so that is called the entitlement okay so uh primary admin or the bank site users can i add any perm in any type of permissions to a particular user correct so um you understand this
+
+based on the entitlement we it is decided right yeah we are having a we are having a complete entertainment engine database where we are storing all type of entitlements that is basically we've seen do it not us but yeah so we are having an entitlement engine where all type of permissions are getting added
+
+So anything like if you are trying to access this account to do a particular payment like RTP payment or you are doing or you want some statement on this account. So everything will be will be done by the entertainment first. Everything that the entertainment will be checked that whether you are having permission to do that the payment for
+
+from this particular account then only the entitlement like then only your anything will proceed okay so same things are for the SFTP services also so whenever any company will get on boarded that time from the settings in the permission the SFTP pickup and the delivery will be chosen okay so when this will be chosen the
+
+the first thing what will be like it is it can be it can be done like either by a migration team because right now we'll see a user will get migrated to our system and also we can onboard a new company as well right so whenever you will be we will be adding a new company
+
+that time whenever anyone will be adding a sftp pickup that bank service will do bank clients will do so sftp pickup when the client when the bank client will add an sftp pickup or sftp delivery settings permission to a particular company that time the company profile creation because first company profile creation request will trigger to us
+
+Okay, so this is our content page where we have added all the details here. So basically what will happen that a company profile creation will come to us. What this will do is that it will create another, we simply create the company to the MFT side. Okay, MFT side means that we will be calling MFT company
+
+MFT URL and then we will like we will be able to add all the type of details like company name company I can show you the
+
+I will show you. So basically we add all the type of details like company name, company primary key, primary admin name, company email ID, anything, whatever is necessary required field. From there, let me check if I'm having the NFT service. Okay, so whatever the details are there will be added on the front end side and those details will be fetched in the backend.
+
+before sending to the yes yes so from the back end side there will be a call will be triggered to our uh like our code site first and our code side what what they will do that they will add more details and they will create a profile in the mft site okay
+
+so basically I am a P calls like MST APIs looks like this company on board to company on board you can see this is the sample request payload okay so this type of request we create and we send it to them okay and
+
+and they send us a response back like the next success the next invalid input like that okay so once the profile will be created once the company profile will be created then only we can go for the other company
+
+related settings like either pickup settings either user creation and so all those things all those whatever we will be doing like letter path the first step will be the company creation so company after so first thing when we need to onboard a company from the
+
+waived from the UI side. So that time when they will be adding proper services, whenever they will be adding a specific services, a by default call will be triggered to us to create a company profile at MFDN. If it is successful, that means we can go for the other calls. So what will be the other calls? The second calls will be to create two primary admin.
+
+okay so primary admin is the user creation as well so for that also so for on the company we are having multiple services like activating company deactivating company okay so activating company deactivating company also i will um i will go into details later uh first let me like um tell you the whole details um whatever you should just show it was the dpa contract yeah i will share in the chat
+
+yeah okay uh can you please like upload that to the mfp the contract in the conference you can add something okay i will not add it there i will add it there and it does sure
+
+So second thing will come like the create user MFT. So the create user, like after company will be onboarded, the second thing from the UI side what is done, it is actually kind of by default process that group two primary admin will be created for the users.
+
+for the company. So that will be the user creation. So our primary admin used to have all the accesses. Hence, if the company is eligible for a SFTP settings, that means the primary user will also have the SFTP pickup and delivery option. So in that case, first we need to create the
+
+user profile as well in the mft so the second call will come to us as a user profile so user profile uh like we will create the user profile into company and we are having possible failure reason and all those things so basically this is um this is a user on board so you can see these these many uh requests we send it to um
+
+MFT side. So basically MFT side is kind of right now it is working on an asynchronous flow directly doesn't give us the response. So first they acknowledge so that is why we are having some IDs so that the unique IDs we send
+
+like TOB ID and TOB request ID, that is signed in, this is TOB request ID, we create a random number from our site and we send it and we keep a track for this IDs and they send us acknowledgement that they have received it. So if it is received, we mark it as successful but in our database is, like we show wave successful but in our database it is not.
+
+stays as a pending I will show that data structure so after that after sometimes when they send us a is the next success then only I will be marketer successful and we mark the user as active in the database so we are having several tables like company service map and you before this map
+
+so company service number whenever you are we will be creating a company profile one entry will be made in this table
+
+okay the first entry will be like pending like you can see multiple pendings are there right so the first entry will be done here as a pending this is all the details that are right now as you will see migration means um migration team is doing it uh but uh our entry will be made in this uh company service map and we are having a tracker table as well that is
+
+exactly so here uh we maintain this is the company service map id uh we maintain those ids in the in here like record id as a record id we will add the company service map id and uh record type as company so this is how uh the activity like this is how um
+
+we will add a tracker table here so when MST will again send us a successful response that time we will mark it as success and we will market the company we will market as in the table as active okay and same thing for the user also so whenever we will be having a user entry
+
+so we will add an like user user on board so we add an entry in this table user service map table you can see multiple primary admin multiple users so we will be having a role these are basically the roles i was talking about so the primary admin is mandatory so the user profile we will we will make an entry of our user profile here
+
+And same user service map ID will be added in the SAP update tracker table. And that will be record type of user.
+
+record id will be the id of the users with this map id and the record type will be user and whatever like whatever activity we will do right now we are onboarding it so it will be create and same process mft send us a synchronous uh like um acknowledgement as an explicit once it is uh done so
+
+creation at their end they will send us a success response then only we will mark it as success and will market the user also in the user service map table as active okay till now any conclusion yeah whatever the request we are doing everything is entered into the database yes
+
+so the next process that deactivation activation also I will come later I will explain how the pickup and delivery actually works so basically once the user profile is set up after that the user will be added a user will be given that is a pick up or delivery permission or the setup so how
+
+that is going to do is that for the pickup the user will be needing a SSH key setup so why SSH key so basically whenever my company will be provided a server to the company is having a server right now that is the pickup server so MFT what MFT will do MFT will pick up all the reports from the SFTP outbound folder and will put
+
+put into that particular server company pick up server so that company pick up server means some company any user any user from that particular company can access it if they are having proper permission okay so that means company will be giving the users the permission whoever can be picking up from the particular server
+
+So how they will be picking up. So for that to login into that server, this SSH key comes like we need to set up the SSH key. So company can have around one company can have around 10 SSH key and they assigned the SSH keys to the user.
+
+so user can use those SSH key and login to the particular server and get the file so to pick up we are basically that is what basically let's create SSH key like this is the create SSH key profile so for that also we need to like we need to
+
+send mfc uh request that this is a stage key particular stage key is belong to this um like to the particular user okay so whenever we are assigning it to um any user we let empty know that this ssh key belongs to particular user so this is basically this is also a configuration setting
+
+and how are you saying like this SSS key belongs to particular company so company related any setting that is in our site okay so
+
+So each company will have a particular SSH key right? Yeah so company related settings we don't have to add it in the SSH key setting we don't have to add it in the MFT side only the only the
+
+so we are having two separate tables so basically company related all the like whatever uh company is having that we store at our end only and our database we don't send anything to any any notification to at mfc site mfp doesn't need to know
+
+okay which all is the age key and the company is having a little is this key that the company is giving to the user only msg only bothered about what users what as a key user will be adding so they will keep a track of the usage key that user is
+
+using okay so whenever like any pickup key like any any company is adding multiple is the kick one company can add multiple stage key so and you can see
+
+suppose this company he has added multiple page key right so this is a page key they can use it to any user so this pickup auth key ID is the foreign key for this table user pickup auth key mapping this is the foreign key
+
+So whenever user is getting onboarded with the pick up, it's a typical pick up setting. At that time, we are adding any OSCE, they can select any OSCE from the list. They show actually the list. So that needs to be, like they can add and they can create the pick up profile of this.
+
+so that like they can go and log into the particular pickup server so like msg only needs to know that which ssh belongs to which user key profile so that like it is the configuration at their end okay msg doesn't need to know about what all company is having this is completely our settings our site settings okay
+
+okay and the same thing uh so on ssh key that goes um and that is like there is a pickup so i am telling pickup multiple times so let's go to the pickup one um so okay
+
+so and pick up PGP key so take a services how the pickup file will be set that is
+
+yes in the company you can see this that the part of the company itself so the company like this pick up profile basically the company's this is completely belong to the company the pickup profile so what is happen like the peak we are having a service called pickup PGP key so whenever company is adding the company is having whatever like the pickup
+
+server how the things get delivered is that um we encrypt the file like any report any uh statement whatever will be delivered to a pickup server or a delivery server it will be encrypted by a pickup a pgp key
+
+we are using the PGP key encryption so for the pickup also we will be having a PGP key for delivery also we will be having a PGP key okay so PGP key is an encryption key so that is why you can see the request this is the file encryption key the file encryption key enabled like boolean so you can add like true or false so whatever a company like so
+
+whenever we get a pickup PGP key call so that time this is completely associated to the company and we call the MFT site to set up the pickup setting so you can see this is hot start right this PGP key PGP key is optional you can either set it you can either don't set it like this completely up to you yeah
+
+msd setup pickup pgp okay so if you want your um if you want your files to be encrypted or not that that's up to you so you can see it is an some completely associated to a
+
+company so that is what I wanted to say that whenever it comes to pick up it's completely associated to a company whenever it comes to delivery it is associated with the particular user profile okay so you can see here no user will be mentioned here only company ID whatever company whatever to the company ID
+
+we are having we will share it here and the PGPT stream and neither inactive or active whatever is your requirement but there is one more thing so whatever key you will be generating you need to pass it with a base 64 encryption base 64 encoded encryption
+
+okay so for the same thing goes for a delivery also i will show you here the delivery one also for the delivery you can see that server it is associated with the server block file id
+
+So delivery I will explain later because delivery is having few details with more details that we will cover. So till pickup you don't have any question like company can have a pickup server
+
+the pickup server works is that any report can come to that, any report, MFT will put it into the pickup server and user can log into the pickup server and get the particular record. And that report can be encrypted with the PGP key. So when user will pick up, they will decrypt with the particular PGP key, can have a public and private key. The private key will be like,
+
+the user can be having so that the pickup like they will encrypt the key with the encrypt the file with the with their key and they can see the report use the report also to log into the particular pickup server they need the usage key settings that is basically we are um configuring with the ssh queue or key setup on the ui side
+
+Okay, one question, so when we are setting up this pickup options right, so the company should be active right? Yes. Then we will place it in that folder? Yes. So every time we are making the check? Yes, most likely yes for pickup and PGP I believe, for other few setup I think it's already mentioned for the pending one also yeah.
+
+yeah we will be having a setup if it is already active or not okay so first the condition check will happen and then we are placing it so okay so should i go for the delivery method also or we can stop the THD after you
+
+i have set up every day for a half an hour if you want me to proceed and then i can extend the delivery as well i think enough for today
+
+okay so I should go and go like go through this pages I will share it to you I will share the other documents as well like the OLC one like check what are the basically the comments at our side you can go through the OLC page and you will get an understanding and come back like what with all your questions and I can visit with the delivery letter
+
+definitely definitely and uh i will go through like i will give a code walkthrough as well but um as of now i'm just showing you that where the code starts so that if you want you can uh check for your self as well so this is the vendor as you saw
+
+I already given you this link probably this is a vendor also code base so in the vendor SSO we are having all the SFTP v2 related models you can see right SFTP go for the SFTP v2 so SFTP v2 controller so these are the controller that currently we are using okay
+
+okay so and also I forgot to mention one more thing that is for the tracker table so whenever we are creating any pickup PTP key or any user or ski you can see the record type of this like PTP key is a PQ this one PTP key we are having separate table
+
+this one I will explain more when I will do a code work super each of them so this is the mapping where we are doing the PGP key mapping like the company can have a like a PGP key and same PGP key will be mapped to the users as well so
+
+so seen also those takers like will be mapped to the server profile ID or a company will have it met the company can have only one CGP key for pickup and the PGP key multiple can be for delivery that I will explain
+
+later but for the pickup anything any anything related to the PGP key the tracker table reads will have an entry as a PGP key and if it is anything for the odd key like a stage key setup the record test will be a stage key and the ID will be from the user pick up or seen nothing
+
+so this id this id this id will be mapped here ssdp tracker tracker table um as user exercise key
+
+I will explain this more when I will go through the code base but this is basically all over understanding I wanted to give you first then we will go further so next day I will explain the delivery and as well as I will start going through the code base as well
+
+Try to set up the render processor before that. Yeah it's completed. You can run it right using TIT.
+
+and so you can start going through the company and the users I will still give an understanding for that whatever we discussed like the create user create company you can go through all the controllers methods are here as I showed we do controller this is the company profile management controller this is a user management controller the pickup management controller so these all you can go through the creation
+
+If there is no other question we can drop off and I will continue again on the next day. Yeah, please share that 888 tracker. Yeah, I will add in the confidence page and share. Okay, thank you. Thank you. I will look into the liquid.
+
+Sure. And, uh, Senator, one thing, uh, so can you just add the Liquidus KT session also to your, uh, KT session list? Liquidus KT session? Okay. Yeah. Yeah. Senator, I have, uh, my, um,
+
+updated that liquid is one uh so not the liquid is the info pipeline uh to add a dead letter queue for everything and then like add uh that checks uh for three days three i mean sorry three um receive message yeah that is also updated like i think i pushed it up to like get this they do let me see like uh that is completed i'll push that to like you know pad also
+
+Thank you. Thank you. Thank you very much.
